@@ -40,7 +40,7 @@ export default function LeftSidebar() {
     {
       title: "Components",
       items: [
-        { name: "Button", url: "docs/components/button" },
+        { name: "Button", url: "docs/components/button", badge: "New" },
         // { name: "Accordion", url: "/components/accordion" },
         // { name: "Autocomplete", url: "/components/autocomplete" },
         // { name: "Buttons", url: "/components/buttons" },
@@ -90,38 +90,40 @@ export default function LeftSidebar() {
                 }`}
               >
                 <ul className="space-y-1 pl-4">
-                  {section.items.map((item) => {
-                    const name = typeof item === "string" ? item : item.name;
-                    const badge =
-                      typeof item === "object" && item.badge
-                        ? item.badge
-                        : null;
-                    const url =
-                      typeof item === "object" && item.url
-                        ? item.url
-                        : `#${name.toLowerCase().replace(/\s+/g, "-")}`;
-                    return (
-                      <li key={name} className="flex items-center">
-                        <a
-                          href={url}
-                          className="block text-gray-400 hover:text-white text-sm py-1 flex-1"
-                        >
-                          {name}
-                        </a>
-                        {badge && (
-                          <span
-                            className={`ml-2 px-2 py-0.5 text-xs rounded-full ${
-                              badge === "New"
-                                ? "bg-blue-600 text-white"
-                                : "bg-gray-700 text-gray-300"
-                            }`}
+                  {section.items.map(
+                    (item: { name: string; badge: string; url: string }) => {
+                      const name = typeof item === "string" ? item : item.name;
+                      const badge =
+                        typeof item === "object" && item.badge
+                          ? item.badge
+                          : null;
+                      const url =
+                        typeof item === "object" && item.url
+                          ? item.url
+                          : `#${name.toLowerCase().replace(/\s+/g, "-")}`;
+                      return (
+                        <li key={name} className="flex items-center">
+                          <a
+                            href={url}
+                            className="block text-gray-400 hover:text-white text-sm py-1 flex-1"
                           >
-                            {badge}
-                          </span>
-                        )}
-                      </li>
-                    );
-                  })}
+                            {name}
+                          </a>
+                          {badge && (
+                            <span
+                              className={`ml-2 px-2 py-0.5 text-xs rounded-full ${
+                                badge === "New"
+                                  ? "bg-blue-600 text-white"
+                                  : "bg-gray-700 text-gray-300"
+                              }`}
+                            >
+                              {badge}
+                            </span>
+                          )}
+                        </li>
+                      );
+                    }
+                  )}
                 </ul>
               </div>
             </div>
