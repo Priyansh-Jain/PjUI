@@ -76,11 +76,11 @@ export default function DashboardLayout() {
         variants={fadeIn}
       >
         <Input placeholder="Search..." className="mb-4" />
-        <Switch
+        {/* <Switch
           label="Toggle Theme"
           checked={darkMode}
           onChange={() => setDarkMode(!darkMode)}
-        />
+        /> */}
       </motion.div>
     </div>
   );
