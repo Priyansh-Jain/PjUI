@@ -4,7 +4,7 @@ import { Menu } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 z-41 w-full border-b border-gray-800 bg-black/50 backdrop-blur-lg">
+    <header className="fixed top-0 z-50 w-full border-b border-gray-800 bg-black/50 backdrop-blur-lg">
       <div className="mx-auto max-w-screen-2xl flex h-16 items-center justify-between px-16">
         {/* Logo and Navigation Menu */}
         <div className="flex items-center gap-10">
