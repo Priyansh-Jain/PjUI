@@ -38,7 +38,7 @@ export default function DashboardLayout() {
           Make beautiful websites
         </motion.h1>
         <motion.div variants={fadeIn}>
-          <Button variant="primary">Get Started</Button>
+          <Button variant="default">Get Started</Button>
         </motion.div>
       </motion.div>
 
