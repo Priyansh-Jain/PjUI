@@ -12,7 +12,7 @@ export function TailwindcssButtons() {
       return;
     }
 
-    let buttonString = ReactDOMServer.renderToStaticMarkup(button.component);
+    const buttonString = ReactDOMServer.renderToStaticMarkup(button.component);
 
     if (buttonString) {
       const textToCopy = buttonString;
