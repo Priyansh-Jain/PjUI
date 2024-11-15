@@ -3,6 +3,12 @@ import { useState } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
 
 export default function LeftSidebar() {
+  type ItemType = {
+    name: string;
+    url: string;
+    badge: string;
+  };
+
   const sections = [
     {
       title: "Getting Started",
@@ -91,7 +97,7 @@ export default function LeftSidebar() {
               >
                 <ul className="space-y-1 pl-4">
                   {section.items.map(
-                    (item: { name: string; badge: string; url: string }) => {
+                    (item: { name: string; badge?: string; url: string }) => {
                       const name = typeof item === "string" ? item : item.name;
                       const badge =
                         typeof item === "object" && item.badge
