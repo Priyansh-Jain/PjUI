@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import reactElementToJSXString from "react-element-to-jsx-string";
-// import { toast, Toaster } from "sonner";
-import { ButtonsCard } from "../ui/tailwindcss-buttons";
+// import reactElementToJSXString from "react-element-to-jsx-string";
+// import { ButtonsCard } from "../ui/tailwindcss-buttons";
 import { toast } from "react-hot-toast";
+import ReactDOMServer from "react-dom/server";
 
 export function TailwindcssButtons() {
   const copy = (button: any) => {
@@ -11,7 +11,8 @@ export function TailwindcssButtons() {
       copyToClipboard(button.code);
       return;
     }
-    let buttonString = reactElementToJSXString(button.component);
+
+    let buttonString = ReactDOMServer.renderToStaticMarkup(button.component);
 
     if (buttonString) {
       const textToCopy = buttonString;
